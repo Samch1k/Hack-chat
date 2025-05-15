@@ -6,11 +6,10 @@ from langchain.sql_database import SQLDatabase
 from dotenv import load_dotenv
 import os
 
-# Load environment variables
 load_dotenv()
 
-# Setup database connection and LLM
-print("DATABASE_URL:", os.getenv("DATABASE_URL"))
+print("DATABASE_URL:", os.getenv("DATABASE_URL"))  # Debug
+
 db = SQLDatabase.from_uri(os.getenv("DATABASE_URL"))
 llm = OpenAI(temperature=0, openai_api_key=os.getenv("OPENAI_API_KEY"))
 toolkit = SQLDatabaseToolkit(db=db, llm=llm)
