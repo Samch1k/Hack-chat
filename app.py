@@ -1,7 +1,7 @@
 import chainlit as cl
-from langchain.agents.agent_toolkits import SQLDatabaseToolkit
+from langchain_community.agent_toolkits import SQLDatabaseToolkit
 from langchain.agents import create_sql_agent
-from langchain.llms import OpenAI
+from langchain_community.llms import OpenAI
 from langchain.sql_database import SQLDatabase
 from dotenv import load_dotenv
 import os
