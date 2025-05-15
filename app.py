@@ -10,6 +10,7 @@ import os
 load_dotenv()
 
 # Setup database connection and LLM
+print("DATABASE_URL:", os.getenv("DATABASE_URL"))
 db = SQLDatabase.from_uri(os.getenv("DATABASE_URL"))
 llm = OpenAI(temperature=0, openai_api_key=os.getenv("OPENAI_API_KEY"))
 toolkit = SQLDatabaseToolkit(db=db, llm=llm)
