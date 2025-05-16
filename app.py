@@ -12,7 +12,7 @@ load_dotenv()
 print("DATABASE_URL:", repr(os.getenv("DATABASE_URL")))
 
 db = SQLDatabase.from_uri(os.getenv("DATABASE_URL"))
-llm = OpenAI(temperature=0)  # <-- ключ берется из ENV
+llm = OpenAI(temperature=0)  # OpenAI key from env
 
 toolkit = SQLDatabaseToolkit(db=db, llm=llm)
 agent_executor = create_sql_agent(llm=llm, toolkit=toolkit, verbose=True)
